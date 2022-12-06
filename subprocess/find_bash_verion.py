@@ -18,7 +18,7 @@ def find_bash_version_linux():
         print(f'Error: {err}\n Error occurred')
         
         
-
+ 
 
 
 def find_java_version():
