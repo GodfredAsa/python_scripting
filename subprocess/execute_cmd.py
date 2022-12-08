@@ -16,6 +16,9 @@ print(f'Error Code: {err}')
 
 
 
+
+
+
 # TAKING COMMAND AS A LIST, APPLY SPLIT ON THE STRING AS A COMMAND
 '''cmd = "echo $HOME".split()
 sp = subprocess.Popen(cmd, shell= False, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)

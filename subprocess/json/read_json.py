@@ -7,6 +7,6 @@ f = open(req_file, 'r')
 
 data = json.load(f)
 
-print(data["glossary"]["title"])
+title = data["glossary"]["title"]
 
 f.close()

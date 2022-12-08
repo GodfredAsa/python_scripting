@@ -1,0 +1,77 @@
+RULES IN CREATING REGULAR EXPRESSION 
+
+REGEX is a prodecure in any language to look for a specified pattern in a given text 
+re is the module used for REGEX in python 
+ there are different operations in re like 
+    - search
+    - match
+    - finditer 
+    - findall 
+    - split 
+    - sub etc 
+Syntax 
+The following are the general syntax for regular expression in the operations above 
+    - re.search(pattern, text)
+    - re.match(pattern, text)
+    - re.finditer(pattern, text)
+    - re.findall(pattern, text)
+
+
+NB: Pattern refers to a sequence of characters, which represents multiple strings 
+Examples of Pattern
+- "Python[2,3]" => Python2, Python3
+- r"python" or r"python[2,3]" referred to as raw string 
+
+Using findall 
+
+import re
+print(re.findall(pattern, text))
+
+Pattern    Meaning 
+- \w       single character and numbers including underscore 
+- \w\w    2 characters in the text for simplicity \w{2}
+- \W      capital matches any character not part of \w small w.
+          includes spaces, special characters
+
+- \d     refers to any number. same as [0-9]
+.        matches any single character except newline character. matches all characters 
+        on the keyubaord except newline 
+        matching . with . use escape \.
+
+searching for python followed by any number 
+
+pattern = "python\d"
+
+
+MORE RULES WITH REGEX 
+1. ^   re.findall('^i[ts]', "it is raining heavily, and mum is washing")
+    - this will return only the 1st match which is ['it']
+
+2. $   re.findall('learning$', "I am learning as we are learning too, learn")
+    - this will return only the last match which is ['learning']
+
+2. \b  re.findall('\\blearning', "I am learning as we are learning too, learn")
+    - empty space at the end and beginning of a string['learning, learning']
+    - NB: u can replace the double escape with r as ffs r=> raw string and will escape special xters
+    - re.findall(r'\blearning', "I am learning as we are learning too, learn")
+    - re.findall(r'\blearning\b', "I am learning as we are learning too, learn") space back and front
+    - \b is used for a word 
+
+3. \B refers deals without space 
+    - re.findall(r'\Blearn\B', "I am learn as we are learning too, learn")
+    - means find 'learn' without space before of after it 
+
+4. \t \n \r matches tab, newline and return respectively
+
+5. * means 0 or more times 
+    - "xa*z  ==> ['xz', 'xaz', xaaz'] it means the 'a' should be 0 or more 
+
+6. + means 1 or more 
+    - "xa+z  ==> ['xaz', 'xaaz', xaaaz'] it means the 'a' should be 1 or more 
+
+7. ? means 1 or none EG. 'xa?z' ==> ['xz', 'xaz'] these are the only possible outcomes
+
+8. {n} means n number of characters
+    - boy{2} means y should be 2 ==> boyy
+    - boy{2,} means y should be 2 or more [boyy, boyyy, ...]
+    - boy{2,5} means min number of y is 2 and max number of y is 5
