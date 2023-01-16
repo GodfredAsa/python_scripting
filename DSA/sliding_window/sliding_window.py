@@ -85,13 +85,13 @@ Input: s = "codeforintelligents"
 Output: 3
 Explanation: 'nts' is the longest substring that doesn't contain any vowels.
 """
-def getLongestSubstring(s):
+def getLongestSubstring(word: str):
     vowels = ['a', 'e', 'i', 'o', 'u']
     result = ""
     maxResult = ""
-    for i in range(len(s)):
-        if s[i] not in vowels:
-            result += s[i]
+    for i in range(len(word)):
+        if word[i] not in vowels:
+            result += word[i]
             if len(result) > len(maxResult):
                 maxResult = result
         else:
@@ -106,35 +106,36 @@ k = 2
 Ouput: False
 """
 
-def getDuplicates(nums, k):
+def getDuplicates(nums: list[int], target: int) -> bool:
     d = {}
+    is_duplicate = False
     
     for i in range(len(nums)):
-        if nums[i] in d and i - d[nums[i]] <= k:
-            return True
+        if nums[i] in d and i - d[nums[i]] <= target:
+            is_duplicate = True
         else:
             d[nums[i]] = i
-    return False   
+    return is_duplicate   
 
-print(f'Duplicate: {getDuplicates([5, 6, 8, 2, 4, 6, 9], 2)}')
+print(f'Duplicate: {getDuplicates([5, 6, 8, 2, 4, 6, 9], 6)}')
 
 """
-Given an array of positive numbers and a positive number ‘S’, 
+Given an array of positive numbers and a positive number ‘S’| target, 
 find the length of the smallest contiguous subarray 
-whose sum is greater than or equal to ‘S’. Return 0, 
+whose sum is greater than or equal to ‘S’ | target. Return 0, 
 if no such subarray exists.
 """
 
-def smallest_subarray(array: list, s: int):
+def smallest_subarray(nums: list[int], target: int):
     start = 0
     window_sum = 0
     min_sum = math.inf
     
-    for i in range(0, len(array)):
-        window_sum  += array[i]
-        while window_sum >= s:
+    for i in range(0, len(nums)):
+        window_sum  += nums[i]
+        while window_sum >= target:
             min_sum = min(min_sum, i - start + 1)
-            window_sum -=array[start]
+            window_sum -=nums[start]
             start += 1
     return 0 if min_sum == math.inf else min_sum
 
@@ -200,4 +201,6 @@ def fruits_into_basket(fruits: list):
             start +=1
         max_length = max(max_length, i - start + 1)
     return max_length
-            
+
+print(f"Fruits in a Basket A: {fruits_into_basket(['A', 'B', 'C', 'A', 'C'])}")
+print(f"Fruits in a Basket B: {fruits_into_basket(['B', 'C', 'B', 'B', 'C'])}")
