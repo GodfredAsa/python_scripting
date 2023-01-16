@@ -27,7 +27,8 @@ def find_java_version():
     rc =  sp.wait()
     err, output = sp.communicate()
     if rc ==0:
-       print(output)
+        j_version = output[14:20]
+        print("Java Version: ", j_version)
     else:
         print(f'Output: {err}')
     
