@@ -1,4 +1,5 @@
 
+
 def two_Sum(nums: list[int], target: int) -> list[int]:
     has_map = {}
     for i in range(len(nums)):
@@ -8,7 +9,7 @@ def two_Sum(nums: list[int], target: int) -> list[int]:
             has_map[target - nums[i]] = i
 
 print(f"Two Sum: {two_Sum([1,4,10,-3], target = 14)}")
-
+print(two_Sum([1,4,10,-3], target = 14))
 
 def removeDuplicates(numberArray: list[int]):
     start, nextIndex= 1, 1
@@ -33,6 +34,7 @@ def pairWithTargetSum(arr: list[int], target: int ):
         else:
             startIndex +=1
 
+print("Pair With Target Sum: ", pairWithTargetSum([2,3,4,5,6,9], 11))
 print("Pair With Target Sum: ", pairWithTargetSum([2,3,4,5,6,9], 11))
 
 
