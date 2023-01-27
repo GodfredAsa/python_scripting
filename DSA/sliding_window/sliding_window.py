@@ -120,9 +120,9 @@ def getDuplicates(nums: list[int], target: int) -> bool:
 print(f'Duplicate: {getDuplicates([5, 6, 8, 2, 4, 6, 9], 6)}')
 
 """
-Given an array of positive numbers and a positive number ‘S’| target, 
+Given an array of positive numbers and a positive number target, 
 find the length of the smallest contiguous subarray 
-whose sum is greater than or equal to ‘S’ | target. Return 0, 
+whose sum is greater than or equal to target. Return 0, 
 if no such subarray exists.
 """
 
