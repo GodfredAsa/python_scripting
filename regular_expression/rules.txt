@@ -35,7 +35,7 @@ Pattern    Meaning
 
 - \d     refers to any number. same as [0-9]
 .        matches any single character except newline character. matches all characters 
-        on the keyubaord except newline 
+        on the keybaord except newline 
         matching . with . use escape \.
 
 searching for python followed by any number 
